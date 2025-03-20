@@ -4,6 +4,8 @@ import { Input } from "../../components/ui/Input"
 import { zodResolver } from "@hookform/resolvers/zod";
 import Button from "../../components/ui/button";
 import { SingleSelect } from "../../components/ui/SingleSelect";
+import { IoIosArrowBack } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 export const SingUp = () => {
 
@@ -37,17 +39,26 @@ export const SingUp = () => {
         reset()
     })
 
+    const navigate = useNavigate();
+    const handleBack = ()=>{
+        navigate('/')
+    }
+
     return (
         <form className="flex flex-col gap-6 md:flex-row max-w-7xl mx-auto"
             onSubmit={onSubmit}>
             <section className="flex flex-col gap-3 flex-1">
+                <div className="flex space-x-1.5 items-center cursor-pointer font-semibold text-lg" onClick={handleBack}>
+                    <IoIosArrowBack />
+                    Regresar
+                </div>
             </section>
-            <section className="flex flex-col gap-4 flex-1 p-4 bg-amber-900 rounded-xl self-start w-full">
+            <section className="flex-col md:flex-row gap-4 flex-1 p-4 bg-background border-2 border-primary-red rounded-xl self-start w-full">
                 <h2 className="font-semibold text-start text-xl px-5">
                     Registrate como Egresado
                 </h2>
-                <div className="flex gap-2 px-5 justify-between">
-                    <div className="flex flex-col gap-0.5 w-full">
+                <div className="flex flex-col md:flex-row gap-2 px-5 justify-between">
+                    <div className="flex flex-col gap-0.5 w-full md:text-sm">
                         <Input
                             label="Nombres"
                             name="name"
@@ -58,7 +69,7 @@ export const SingUp = () => {
                             classname="w-full"
                         />
                     </div>
-                    <div className="flex flex-col gap-0.5 w-full">
+                    <div className="flex flex-col gap-0.5 w-full md:text-sm">
                         <Input
                             label="Apellidos"
                             name="lastname"
@@ -70,8 +81,8 @@ export const SingUp = () => {
                         />
                     </div>
                 </div>
-                <div className="flex gap-2 px-5 justify-between">
-                    <div className="flex flex-col gap-0.5 w-full">
+                <div className="flex flex-col md:flex-row gap-2 px-5 justify-between">
+                    <div className="flex flex-col gap-0.5 w-full md:text-sm">
                         <SingleSelect
                             options={documentOptions}
                             label="DNI/CE"
@@ -121,7 +132,7 @@ export const SingUp = () => {
                         error={errors.password?.message}
                         register={register}
                     />
-                    <p className="text-sm font-light text-gray-600">
+                    <p className="text-sm p-2 font-light text-gray-600">
                         La contrasenia debe de tener al menos 8 caracteres incluyendo un numero o una letra.
                     </p>
                 </div>

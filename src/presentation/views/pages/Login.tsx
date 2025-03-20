@@ -3,8 +3,12 @@ import { useForm } from "react-hook-form";
 import { LoginFormValues, loginSchema } from "../../../schema/login.schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Button from "../../components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
+
+    const navigate = useNavigate();
+
     const {
         register,
         handleSubmit,
@@ -72,7 +76,8 @@ export const Login = () => {
                         label="Ingresar" />
                     <Button
                         label="Registrate" 
-                        type="button"/>
+                        type="button"
+                        onClick = {() => navigate("/signUp")}/>
                 </div>
             </section>
         </form>
