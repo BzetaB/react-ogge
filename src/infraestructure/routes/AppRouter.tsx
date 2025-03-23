@@ -1,6 +1,6 @@
 import {createBrowserRouter } from 'react-router-dom'
 import { SingUp } from '../../presentation/views/pages/SignUp'
-import { AuthLayout } from '../../presentation/views/layouts/authLayout'
+import { AuthLayout } from '../../presentation/layouts/authLayout'
 import { Login } from '../../presentation/views/pages/Login'
 
 

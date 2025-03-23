@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { SingUpFormValues, sinUgpSchema } from "../../../schema/singUp.schema";
+import { SingUpFormValues, sinUgpSchema } from "../../../application/schema/singUp.schema";
 import { Input } from "../../components/ui/Input"
 import { zodResolver } from "@hookform/resolvers/zod";
 import Button from "../../components/ui/button";
@@ -132,11 +132,11 @@ export const SingUp = () => {
                         error={errors.password?.message}
                         register={register}
                     />
-                    <p className="text-sm p-2 font-light text-gray-600">
+                    <p className="text-sm p- font-light text-gray-600">
                         La contrasenia debe de tener al menos 8 caracteres incluyendo un numero o una letra.
                     </p>
                 </div>
-                <div className="flex flex-col px-5">
+                <div className="flex flex-col px-5 p-5">
                     <Button
                         type="submit"
                         label="Registrarse" />

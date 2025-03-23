@@ -1,9 +1,9 @@
 import { Input } from "../../components/ui/Input";
 import { useForm } from "react-hook-form";
-import { LoginFormValues, loginSchema } from "../../../schema/login.schema";
+import { LoginFormValues, loginSchema } from "../../../application/schema/login.schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Button from "../../components/ui/button";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Login = () => {
 
@@ -43,7 +43,7 @@ export const Login = () => {
                 <div className='flex flex-col gap-4'>
                 </div>
             </section>
-            <section className="flex flex-col gap-4 flex-1 bg-background border-2 border-primary-red p-4 rounded-xl self-start">
+            <section className="flex flex-col gap-4 flex-1 bg-background border-2 border-primary-red p-4 shadow-2xl rounded-xl self-start">
                 <h2 className="font-bold text-center text-xl">
                     Inicio de Sesion - Egresado
                     <span className="block font-normal text-sm">
@@ -74,10 +74,10 @@ export const Login = () => {
                     <Button
                         type="submit"
                         label="Ingresar" />
-                    <Button
-                        label="Registrate" 
-                        type="button"
-                        onClick = {() => navigate("/signUp")}/>
+                    <span onClick={() => navigate("/signUp")}
+                        className="px-2 p-2 font-bold text-lg text-primary-red hover:text-button-hover cursor-pointer">
+                        ¿No tienes una cuenta aún? ¡Registrate aquí!
+                    </span>
                 </div>
             </section>
         </form>
