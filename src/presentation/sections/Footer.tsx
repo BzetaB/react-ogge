@@ -1,19 +1,8 @@
 import { Mail, MapPin } from "lucide-react";
+import { FooterSchema } from "../../schema/footer.schema";
 
-interface FooterProps {
-    empresa: string,
-    year?: number,
-    email: string,
-    location: string,
-}
-
-
-export const Footer = ({
-    empresa,
-    year,
-    email,
-    location
-}: FooterProps) => {
+export default function Footer (
+    { empresa, year, email, location}: FooterSchema){
     return (
         <footer className="bg-primary-red text-white font-semibold py-4 w-full mt-auto">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center px-4">
@@ -37,5 +26,5 @@ export const Footer = ({
                 </div>
             </div>
         </footer>
-    );
+    )
 };

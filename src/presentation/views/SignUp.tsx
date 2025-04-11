@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
-import { SingUpFormValues, sinUgpSchema } from "../../../application/schema/singUp.schema";
-import { Input } from "../../components/ui/Input"
+import { SingUpFormValues, sinUgpSchema } from "../../schema/singUp.schema";
+import { Input } from "../../presentation/components/ui/Input"
 import { zodResolver } from "@hookform/resolvers/zod";
-import Button from "../../components/ui/button";
-import { SingleSelect } from "../../components/ui/SingleSelect";
+import Button from "../../presentation/components/ui/button";
+import { SingleSelect } from "../../presentation/components/ui/SingleSelect";
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 
